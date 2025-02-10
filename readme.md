@@ -24,7 +24,7 @@ The installation consists of ensuring you have the required prerequisites, copyi
 
 	- At logon of any user
 
--Trigger 2
+- Trigger 2
 
 	- On Event Log:Application, Event ID: 11707
 
@@ -40,7 +40,7 @@ The installation consists of ensuring you have the required prerequisites, copyi
 - For the task General->Security opions:
 
 	- When running the task use the following user account:
-		- <your user account>
+		- `<your user account>`
 	- Run with the highest priveleges
 	
 ### How it works
