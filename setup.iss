@@ -20,8 +20,8 @@ Source: "src\create_task.ps1"; DestDir: "{app}"; Flags: ignoreversion
 
 [Run]
 //Filename: "schtasks.exe"; Parameters: "/Create /tn ""TrayUnhider"" /tr ""cmd /C start /min \""\"" powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File \""{app}\tray_unhider.ps1\"""" /sc onlogon /ec Application /mo *[System/EventID=11707] /rl highest /f"; Flags: runhidden
-Filename: "powershell.exe"; Parameters: "-ExecutionPolicy Bypass -File ""{app}\create_task.ps1"" -Argument ""{app}\tray_unhider.ps1"""; WorkingDir: {win}; Flags: shellexec runhidden
-Filename: "powershell.exe"; Parameters: "-ExecutionPolicy Bypass -File ""{app}\tray_unhider.ps1"""; WorkingDir: {win}; Flags: shellexec runhidden
+Filename: "powershell.exe"; Parameters: "-ExecutionPolicy Bypass -File ""{app}\create_task.ps1"" -PathToTrayUnhiderScript ""{app}\tray_unhider.ps1"" -UserName ""{username}"""; WorkingDir: {win}; Flags: shellexec runhidden
+Filename: "powershell.exe"; Parameters: "-ExecutionPolicy Bypass -File ""{app}\tray_unhider.ps1"""; WorkingDir: {win}; Flags: shellexec runhidden runasoriginaluser
 
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/C schtasks /delete /tn ""TrayUnhider"" /f"; Flags: runhidden; RunOnceId: "DeleteTrayUnhiderTask"

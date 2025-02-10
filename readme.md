@@ -20,10 +20,13 @@ The installation consists of ensuring you have the required prerequisites, copyi
 
 2) Create a new task in Task Scheduler with the following:
 
-- Triggers
+- Trigger 1
 
-	- At startup
-	- Delay task for: 10 minutes
+	- At logon of any user
+
+-Trigger 2
+
+	- On Event Log:Application, Event ID: 11707
 
 - Action
 
@@ -36,9 +39,9 @@ The installation consists of ensuring you have the required prerequisites, copyi
 				
 - For the task General->Security opions:
 
-	- Run only when the user is logged on
+	- When running the task use the following user account:
+		- <your user account>
 	- Run with the highest priveleges
-	- Hidden
 	
 ### How it works
 

@@ -28,7 +28,7 @@ foreach ($subKey in $subKeys) {
 	#Write-Host "$subKeyPath ($exeName) IsPromoted = $propertyValue" 
 	
 	# If the value IsPromoted does not exist or if it is not set to 1
-    if ($propertyValue -eq $null -or $propertyValue -ne 1) {
+    if ($null -eq $propertyValue -or $propertyValue -ne 1) {
         # Create or set the value for IsPromoted to 1
         New-ItemProperty -Path $subKeyPath -Name "IsPromoted" -Value 1 -PropertyType DWord -Force
 
