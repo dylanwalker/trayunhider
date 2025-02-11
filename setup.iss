@@ -14,6 +14,9 @@ MinVersion=10.0.22000
 OutputDir=installer
 PrivilegesRequired=admin 
 
+[Dirs]
+Name: "{userappdata}\TrayUnhider"
+
 [Files]
 Source: "src\tray_unhider.ps1"; DestDir: "{app}"; Flags: ignoreversion
 Source: "src\create_task.ps1"; DestDir: "{app}"; Flags: ignoreversion
@@ -28,3 +31,4 @@ Filename: "{cmd}"; Parameters: "/C schtasks /delete /tn ""TrayUnhider"" /f"; Fla
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}"
+Type: filesandordirs; Name: "{userappdata}\TrayUnhider"
