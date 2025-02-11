@@ -1,7 +1,7 @@
 # TrayUnhider
 
 
-TrayUnhider is a utility to keep Windows 11 system tray icons *unhidden*, because I got sick of turning On new system trays in the Taskbar menu whenever an App updated or I installed something new. 
+TrayUnhider is a utility to keep Windows 11 system tray icons *unhidden*, because I got sick of turning "On" new system trays in the Taskbar menu whenever an App updated or I installed something new. 
 
 ### How to Install
 

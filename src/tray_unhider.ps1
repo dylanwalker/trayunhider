@@ -22,7 +22,7 @@ foreach ($subKey in $subKeys) {
     # Define the full path of the subkey
     $subKeyPath = $subKey.PSPath
 	
-	# Check if the IsPromoted property exists
+    # Check if the IsPromoted property exists
     $propertyValue = (Get-ItemProperty -Path $subKeyPath -Name "IsPromoted" -ErrorAction SilentlyContinue).IsPromoted
 	
 	# Extract the name of the executable

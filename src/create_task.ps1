@@ -20,7 +20,7 @@ $trigger2 = New-CimInstance -CimClass $CIMTriggerClass -ClientOnly
 #$trigger2 = New-ScheduledTaskTrigger
 $trigger2.Subscription = 
 @"
-<QueryList><Query Id="0" Path="Application"><Select Path="Application">*[System[EventID=11707]]</Select></Query></QueryList>
+<QueryList><Query Id="0" Path="Application"><Select Path="Application">*[System[EventID=11707 or EventID=10001]]</Select></Query></QueryList>
 "@
 
 $principal = New-ScheduledTaskPrincipal -UserId "$UserName" -LogonType ServiceAccount -RunLevel Highest
