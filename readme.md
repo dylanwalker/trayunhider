@@ -11,10 +11,7 @@ Just download the executable installer from the release page and run it.
 ### Or if you'd rather install manually
 The installation consists of ensuring you have the required prerequisites, copying some files and creating a scheduled task to run the unhide script on different trigger event (startup, new app installed with MSI installer).
 
-0) Requirements:
-
- 	a) Ensure that you can run powershell scripts
-
+0) Ensure that you can run powershell scripts
 
 1) Copy all files from `.\src` into  `<install location>` (e.g., `%programfiles(x86)%\TrayUnhider`)
 
