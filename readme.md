@@ -17,7 +17,7 @@ The installation consists of ensuring you have the required prerequisites, copyi
 
 2) Create the folder `%APPDATA%\TrayUnhider` (this is used to store log files).
 
-3) From the install location, run:  `powershell.exe  -ExecutionPolicy Bypass -File .\create_task.ps1 -PathToTrayUnhiderScript <install location> -UserName <windows username>`. Note: `<windows username>` should include your PC Name, e.g., `COMPUTERNAME\username`
+3) From the install location, run:  ```powershell.exe  -ExecutionPolicy Bypass -File .\create_task.ps1 -PathToTrayUnhiderScript <install location> -UserName <windows username>``` Note: `<windows username>` should include your PC Name, e.g., `COMPUTERNAME\username`
 	
 ### How it works
 
