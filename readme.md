@@ -18,34 +18,15 @@ The installation consists of ensuring you have the required prerequisites, copyi
 
 1) Copy all files from `.\src` into `%programfiles(x86)%\TrayUnhider`
 
-2) Create a new task in Task Scheduler with the following:
+2) Create the folder `%APPDATA%\TrayUnhider` (this is used to store log files).
 
-- Trigger 1
+3) Put all `.ps1` files in their permanent home, which I'll refer to as `<install location>` below.
 
-	- At logon of any user
-
-- Trigger 2
-
-	- On Event Log:Application, Event ID: 11707
-
-- Action
-
-	- Program/Script:
-		- `cmd`
-	- Arguments:
-		```
-		/c start /min "" powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Program Files (x86)\TrayUnhider\tray_unhider.ps1"
-		```
-				
-- For the task General->Security opions:
-
-	- When running the task use the following user account:
-		- `<your user account>`
-	- Run with the highest priveleges
+4) From the install location, run:  `powershell.exe  -ExecutionPolicy Bypass -File .\create_task.ps1 -PathToTrayUnhiderScript <install location> -UserName <windows username>`
 	
 ### How it works
 
 I use a powershell script `tray_unhider.ps1` to read through the registry for apps with system tray (i.e., all subkeys of `HKCU:\Control Panel\NotifyIconSettings`). 
-If an subkey doesn't have the value `IsPromoted=1` then I create that value and log it in `tray_unhider.log`. 
+If an subkey doesn't have the value `IsPromoted=1` then I create that value and log it in `%APPDATA%\TrayUnhider\tray_unhider.log`. 
 There are some solutions out there that are similar, but they are compiled (rather than a transparent powershell script) and do this on a loop with a time delay within the code. 
 In contrast, my script runs through the subkeys of the registry once and I use windows task schedule to trigger it. 
