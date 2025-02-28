@@ -1,4 +1,4 @@
-# Useful Event IDs to trigger this script:  11707 (MSI Installer - successful installation) ; 8216 (System Restore Point created)
+# Useful Event IDs to trigger this script:  11707, 10001 (MSI Installer - successful installation) ; 8216 (System Restore Point created)
 
 
 # Define the registry path
